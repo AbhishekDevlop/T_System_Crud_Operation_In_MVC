@@ -1,0 +1,29 @@
+﻿<h3>Are you sure to Delete employee Record ?</h3>
+<div class="container">
+    @{ Html.BeginForm();}
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Label("Employee Name")
+        </div>
+        <div class="col-lg-3">
+            <b>@ViewBag.Name</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Label("Employee salary")
+        </div>
+        <div class="col-lg-3">
+            <b>@ViewBag.Salary</b>
+            @Html.Hidden("id", (int)ViewBag.Id)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-3">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    </div>
+    @{Html.EndForm();}
+</div>

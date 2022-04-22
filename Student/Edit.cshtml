@@ -1,0 +1,30 @@
+﻿Edit.cshtml
+<h3>Edit Student Record</h3>
+<div class="container">
+    @{ Html.BeginForm();}
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Label("Enter Student Name")
+        </div>
+        <div class="col-lg-3">
+            @Html.TextBox("name",(string)ViewBag.Name)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Label("Enter Student CourseName")
+        </div>
+        <div class="col-lg-3">
+            @Html.TextBox("CourseName", (string)ViewBag.CourseName)
+            @Html.Hidden("id", (int)ViewBag.Id)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-3">
+            <input type="submit" value="Update" class="btn btn-warning" />
+        </div>
+    </div>
+    @{Html.EndForm();}
+</div>

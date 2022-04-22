@@ -1,0 +1,26 @@
+﻿<h3>Employee List</h3>
+<p>
+    @Html.ActionLink("Add New", "Create", "Employees")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Action</th>
+    </tr>
+    @foreach(CRUD_Operation_In_MVC.Models.Employees employees in ViewBag.EmployeeList)
+    {
+        <tr>
+            <td>@employees.EmpId</td>
+            <td>@employees.EmpName</td>
+            <td>@employees.EmpSalary</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { @id = employees.EmpId }) |
+                @Html.ActionLink("Delete", "Delete", new { @id = employees.EmpId })
+            </td>
+        </tr>
+    }
+</table>
+
+

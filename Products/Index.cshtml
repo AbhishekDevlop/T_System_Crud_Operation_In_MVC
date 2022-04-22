@@ -1,0 +1,27 @@
+﻿<h2>This is Product Details</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (CRUD_Operation_In_MVC.Models.Products item in ViewBag.ProdutDAL)
+		{
+			
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+				<td>
+					@item.Price
+				</td>
+			</tr>
+
+		}

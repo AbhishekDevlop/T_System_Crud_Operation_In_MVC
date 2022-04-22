@@ -1,0 +1,24 @@
+﻿<h3>Student List</h3>
+<p>
+    @Html.ActionLink("Add New", "Create", "Student")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>CourseName</th>
+        <th>Action</th>
+    </tr>
+    @foreach(CRUD_Operation_In_MVC.Models.Student student in ViewBag.StudentList)
+    {
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.Name</td>
+            <td>@student.CourseName</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { @id = student.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { @id = student.Id })
+            </td>
+        </tr>
+    }
+</table>
